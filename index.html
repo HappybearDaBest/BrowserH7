@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Python Script Output</title>
+</head>
+<body>
+  <h1>Python Script Output</h1>
+
+  <pre id="output"></pre>
+
+  <script>
+    // Function to fetch the Python script output
+    function fetchPythonOutput() {
+      fetch('Browser.py') // Path to your Python script file
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('output').textContent = data; // Display the output in the 'output' element
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    }
+
+    // Call the fetchPythonOutput function when the page loads
+    window.onload = fetchPythonOutput;
+  </script>
+</body>
+</html>
